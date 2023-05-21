@@ -1,8 +1,9 @@
 // JSON Server module
 const jsonServer = require("json-server");
 const server = jsonServer.create();
-const router = jsonServer.router("db/cardsDb.json");
+const router = jsonServer.router("tmp/cardsDb.json");
 const middlewares = jsonServer.defaults();
+var fs = require("fs");
 
 server.use(middlewares);
 // Add this before server.use(router)
@@ -16,7 +17,6 @@ server.use(jsonServer.bodyParser)
 server.use((req, res, next) => {
   if (req.method === 'POST') {
     req.body.createdAt = Date.now()
-    console.log("Mirella Lins")
   }
   // Continue to JSON Server router
   next()
