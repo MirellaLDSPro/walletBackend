@@ -1,4 +1,9 @@
 {
+  "name": "wallet-api-vercel",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Mirella Lins",
+  "dependencies": {},
   "devDependencies": {
     "json-server": "^0.17.3"
   }
