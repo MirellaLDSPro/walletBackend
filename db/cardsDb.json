@@ -5,6 +5,7 @@
             "number": "3529 5435 3355 8727",
             "cvv": "317",
             "name": "John Doe",
+            "expirationDate": "12/27",
             "cardType": "BLACK"
         },
         {
@@ -12,6 +13,7 @@
             "number": "4197 6389 3544 6379",
             "cvv": "660",
             "name": "Steve Palmer",
+            "expirationDate": "12/27",
             "cardType": "GREEN"
         },
         {
@@ -19,6 +21,7 @@
             "number": "4915 4815 3770 0252",
             "cvv": "708",
             "name": "Sebastian Eschweiler",
+            "expirationDate": "12/27",
             "cardType": "BLACK"
         }
     ]
