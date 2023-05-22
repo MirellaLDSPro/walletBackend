@@ -10,7 +10,7 @@ Este é o repositório do backend para o aplicativo WalletTest, que é um exempl
 ## Pré-requisitos
 
 -   Node.js instalado na versão 12.x ou superior.
--   Banco de dados MySQL configurado.
+-   [json-server](https://github.com/typicode/json-server) instalado
 
 ## Configuração
 
