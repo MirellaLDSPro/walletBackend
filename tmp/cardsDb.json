@@ -8,42 +8,6 @@
       "name": "Mirella Lins",
       "number": "3432432423432423243",
       "createdAt": 1685211047446
-    },
-    {
-      "cardType": "BLACK",
-      "cvv": "123",
-      "expirationDate": "2322",
-      "id": "077d276d-3b61-4f81-84f0-2ac115b6bffe",
-      "name": "Abner",
-      "number": "3432432423432423243",
-      "createdAt": 1685211082154
-    },
-    {
-      "cardType": "BLACK",
-      "cvv": "232",
-      "expirationDate": "2323",
-      "id": "1af6426c-e207-48b9-a919-a434abd45072",
-      "name": "sadasdssda",
-      "number": "45435345435345354345",
-      "createdAt": 1685212925074
-    },
-    {
-      "cardType": "BLACK",
-      "cvv": "232",
-      "expirationDate": "2323",
-      "id": "ef250f94-6de5-4786-a8ba-6d67df29699d",
-      "name": "sadasdssda",
-      "number": "45435345435345354345",
-      "createdAt": 1685213008029
-    },
-    {
-      "cardType": "",
-      "cvv": "123",
-      "expirationDate": "",
-      "id": "0bea9dd5-dafd-4789-8d74-103baf5ef7d5",
-      "name": "Mirella",
-      "number": "1232423432432523",
-      "createdAt": 1685214903780
     }
   ]
 }
