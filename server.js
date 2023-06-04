@@ -114,6 +114,6 @@ router.listen(3000, (err, res) => {
     console.log(err)
     return res.status(500).send(err.message)
 } else {
-    console.log('[INFO] Server Running on port:', port)
+    console.log('[INFO] Server Running on port:', 3000)
 }
 });
