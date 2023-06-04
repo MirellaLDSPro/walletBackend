@@ -1,28 +1,49 @@
 {
   "cards": [
     {
-      "id": "4ec42ba9-50af-40d2-af90-8312edbd9ca2",
-      "number": "3529 5435 3355 8727",
-      "cvv": "317",
-      "name": "John Doe",
-      "expirationDate": "12/27",
-      "cardType": "BLACK"
+      "cardType": "BLACK",
+      "cvv": "123",
+      "expirationDate": "2322",
+      "id": "d3135fb2-e8a4-47bb-b3f5-8762237cc40c",
+      "name": "Mirella Lins",
+      "number": "3432432423432423243",
+      "createdAt": 1685211047446
     },
     {
-      "id": "af2fe382-f6ac-11ed-b67e-0242ac120002",
-      "number": "4197 6389 3544 6379",
-      "cvv": "660",
-      "name": "Steve Palmer",
-      "expirationDate": "12/27",
-      "cardType": "GREEN"
+      "cardType": "BLACK",
+      "cvv": "123",
+      "expirationDate": "2322",
+      "id": "077d276d-3b61-4f81-84f0-2ac115b6bffe",
+      "name": "Abner",
+      "number": "3432432423432423243",
+      "createdAt": 1685211082154
     },
     {
-      "id": "030c2778-31f4-41ad-ac5b-e32861813497",
-      "number": "4915 4815 3770 0252",
-      "cvv": "708",
-      "name": "Sebastian Eschweiler",
-      "expirationDate": "12/27",
-      "cardType": "BLACK"
+      "cardType": "BLACK",
+      "cvv": "232",
+      "expirationDate": "2323",
+      "id": "1af6426c-e207-48b9-a919-a434abd45072",
+      "name": "sadasdssda",
+      "number": "45435345435345354345",
+      "createdAt": 1685212925074
+    },
+    {
+      "cardType": "BLACK",
+      "cvv": "232",
+      "expirationDate": "2323",
+      "id": "ef250f94-6de5-4786-a8ba-6d67df29699d",
+      "name": "sadasdssda",
+      "number": "45435345435345354345",
+      "createdAt": 1685213008029
+    },
+    {
+      "cardType": "",
+      "cvv": "123",
+      "expirationDate": "",
+      "id": "0bea9dd5-dafd-4789-8d74-103baf5ef7d5",
+      "name": "Mirella",
+      "number": "1232423432432523",
+      "createdAt": 1685214903780
     }
   ]
 }
