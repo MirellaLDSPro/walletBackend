@@ -2,13 +2,13 @@ import express from 'express';
 import { MongoClient } from "mongodb";
 import 'dotenv/config';
 
-const app = express();
-app.use(express.json());
+const router = express();
+router.use(express.json());
 
 const uri = process.env.MONGODB_URI;
 const client = new MongoClient(uri);
 
-app.get('/cards', 
+router.get('/cards', 
 async function allCards(req, res) {
   try {
       
@@ -39,7 +39,7 @@ async function allCards(req, res) {
 
 });
 
-app.get('/cards/:id', 
+router.get('/cards/:id', 
 async function allCards(req, res) {
   try {
     const cardIdParam = req.params.id;
@@ -63,7 +63,7 @@ async function allCards(req, res) {
 });
 
 
-app.post('/cards', 
+router.post('/cards', 
     async function store(req, res) {
 
         const { cardType, cvv, expirationDate, id, name, number } = req.body;
@@ -101,23 +101,24 @@ app.post('/cards',
     } 
 )
 
-app.get('/', () => {
+router.get('/', () => {
   
   res.json({resp: "Bem vindo "});
 })
 
-app.get('/myName/:name', (req, res) => {
+router.get('/myName/:name', (req, res) => {
   let name = req.params.name;
   res.json({resp: "Bem vindo " + name});
 
 });
-module.exports = app;
 // server.use(router);
-// router.listen(8080, (err, res) => {
-// 	if (err) {
-//     console.log(err)
-//     return res.status(500).send(err.message)
-// } else {
-//     console.log('[INFO] Server Running on port:', 3000)
-// }
-// });
+router.listen(5000, (err, res) => {
+	if (err) {
+    console.log(err)
+    return res.status(500).send(err.message)
+} else {
+    console.log('[INFO] Server Running on port:', 3000)
+}
+});
+
+module.exports = router;
