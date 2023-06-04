@@ -99,12 +99,12 @@ router.post('/cards',
             await client.close();
         }
     } 
-)
+);
 
 router.get('/', () => {
   
   res.json({resp: "Bem vindo "});
-})
+});
 
 router.get('/myName/:name', (req, res) => {
   let name = req.params.name;
