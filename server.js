@@ -2,9 +2,9 @@ import express from 'express';
 import { MongoClient } from "mongodb";
 import 'dotenv/config';
 
-const server = express();
-server.use(express.json());
-const router = express.Router();
+const router = express();
+router.use(express.json());
+// const router = express.Router();
 
 const uri = process.env.MONGODB_URI;
 const client = new MongoClient(uri);
@@ -102,7 +102,7 @@ router.post('/cards',
     } 
 )
 
-router.use((req, res, next) => {
+router.use('/test', (req, res, next) => {
   res.json({
     title: "Oi",
     message: "Turma!"
@@ -110,13 +110,12 @@ router.use((req, res, next) => {
 });
 
 router.get('/myName/:name', (req, res) => {
-
   let name = req.params.name;
-  res.json("Bem vindo " + name);
+  res.json({resp: "Bem vindo " + name});
 
 });
 
-server.use(router);
-server.listen(3000, () => {
+// server.use(router);
+router.listen(3000, () => {
 	console.log("JSON Server is running");
 });
