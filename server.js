@@ -39,6 +39,30 @@ async function allCards(req, res) {
 
 });
 
+router.get('/cards/:id', 
+async function allCards(req, res) {
+  try {
+    const cardIdParam = req.params.id;
+    const database = client.db("insertDB");
+    const movies = database.collection("haiku");
+    const result = await movies.findOne(
+      { $or: [ { id: cardIdParam } ] }
+    );
+
+    console.log(result);
+  
+    return res.json(result);
+  }
+  catch (err) {
+      console.dir
+      return res.status(400).json({ 'erro': err.message });
+  }
+  finally {
+      await client.close();
+  }
+});
+
+
 router.post('/cards', 
     async function store(req, res) {
 
