@@ -109,6 +109,13 @@ router.use((req, res, next) => {
   });
 });
 
+router.get('/myName/:name', (req, res) => {
+
+  let name = req.params.name;
+  res.json("Bem vindo " + name);
+
+});
+
 server.use(router);
 server.listen(3000, () => {
 	console.log("JSON Server is running");
