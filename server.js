@@ -11,6 +11,12 @@ app.get("/", (req, res) => {
   res.send("Express on Vercel");
 });
 
+router.get('/myName/:name', (req, res) => {
+  let name = req.params.name;
+  res.json({resp: "Bem vindo " + name});
+
+});
+
 app.listen(5000, (err, res) => {
 	if (err) {
     console.log(err)
@@ -19,5 +25,5 @@ app.listen(5000, (err, res) => {
     console.log('[INFO] Server Running on port:', 3000)
 }
 });
-
-module.exports = app;
+// Export the Express API
+export default app;
