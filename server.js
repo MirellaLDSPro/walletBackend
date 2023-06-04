@@ -102,6 +102,11 @@ router.post('/cards',
     } 
 )
 
+router.get('/', () => {
+  
+  res.json({resp: "Bem vindo "});
+})
+
 router.get('/myName/:name', (req, res) => {
   let name = req.params.name;
   res.json({resp: "Bem vindo " + name});
