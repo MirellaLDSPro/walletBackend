@@ -109,7 +109,7 @@ router.get('/myName/:name', (req, res) => {
 });
 
 // server.use(router);
-router.listen(8080, (err, res) => {
+router.listen(3000, (err, res) => {
 	if (err) {
     console.log(err)
     return res.status(500).send(err.message)
