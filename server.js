@@ -1,11 +1,12 @@
 import express from 'express';
 import { MongoClient } from "mongodb";
+import 'dotenv/config';
 
 const server = express();
 server.use(express.json());
 const router = express.Router();
 
-const uri = "mongodb+srv://mirellalds:iLpVa2zHAYj5NQ3b@cluster0.u4ucdin.mongodb.net/";
+const uri = process.env.MONGODB_URI;
 const client = new MongoClient(uri);
 
 router.get('/cards', 
