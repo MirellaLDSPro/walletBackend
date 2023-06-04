@@ -102,13 +102,6 @@ router.post('/cards',
     } 
 )
 
-router.use('/test', (req, res, next) => {
-  res.json({
-    title: "Oi",
-    message: "Turma!"
-  });
-});
-
 router.get('/myName/:name', (req, res) => {
   let name = req.params.name;
   res.json({resp: "Bem vindo " + name});
