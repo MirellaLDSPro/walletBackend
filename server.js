@@ -1,16 +1,14 @@
 import express from 'express';
 import { MongoClient } from "mongodb";
 
-//import * as routes from './routers/routes.js';
 const server = express();
-
 server.use(express.json());
-//server.use(routes);
+const router = express.Router();
 
 const uri = "mongodb+srv://mirellalds:iLpVa2zHAYj5NQ3b@cluster0.u4ucdin.mongodb.net/";
 const client = new MongoClient(uri);
 
-server.get('/cards', 
+router.get('/cards', 
 async function allCards(req, res) {
   try {
       
@@ -41,7 +39,7 @@ async function allCards(req, res) {
 
 });
 
-server.post('/cards', 
+router.post('/cards', 
     async function store(req, res) {
 
         const { cardType, cvv, expirationDate, id, name, number } = req.body;
@@ -79,13 +77,14 @@ server.post('/cards',
     } 
 )
 
-server.use((req, res, next) => {
+router.use((req, res, next) => {
   res.json({
     title: "Oi",
     message: "Turma!"
   });
 });
 
-server.listen(8080, () => {
+server.use(router);
+server.listen(3000, () => {
 	console.log("JSON Server is running");
 });
