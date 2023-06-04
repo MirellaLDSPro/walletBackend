@@ -116,6 +116,11 @@ router.get('/myName/:name', (req, res) => {
 });
 
 // server.use(router);
-router.listen(3000, () => {
-	console.log("JSON Server is running");
+router.listen(8080, (err, res) => {
+	if (err) {
+    console.log(err)
+    return res.status(500).send(err.message)
+} else {
+    console.log('[INFO] Server Running on port:', port)
+}
 });
