@@ -12,6 +12,7 @@ app.get('/cards',
 async function allCards(req, res) {
   try {
       
+const client = await (new MongoClient(uri, {})).connect();
     const database = client.db("insertDB");
     const movies = database.collection("haiku");
     const result = await movies.find().sort().map(
@@ -45,6 +46,7 @@ async function allCards(req, res) {
 app.get('/cards/:id', 
 async function allCards(req, res) {
   try {
+    const client = await (new MongoClient(uri, {})).connect();
     const cardIdParam = req.params.id;
     const database = client.db("insertDB");
     const movies = database.collection("haiku");
@@ -71,6 +73,7 @@ async function store(req, res) {
     const { cardType, cvv, expirationDate, id, name, number } = req.body;
 
     try {
+      const client = await (new MongoClient(uri, {})).connect();
       
         const database = client.db("insertDB");
         const haiku = database.collection("haiku");
