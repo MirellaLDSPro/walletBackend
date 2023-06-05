@@ -10,9 +10,9 @@ const uri = process.env.MONGODB_URI;
 
 app.get('/cards', 
 async function allCards(req, res) {
-  try {
       
-const client = await (new MongoClient(uri, {})).connect();
+  const client = await (new MongoClient(uri, {})).connect();
+  try {
     const database = client.db("insertDB");
     const movies = database.collection("haiku");
     const result = await movies.find().sort().map(
@@ -31,7 +31,7 @@ const client = await (new MongoClient(uri, {})).connect();
 
     console.log(result);
   
-    return res.status(200).json(result);
+    return res.json(result);
   }
   catch (err) {
       console.dir
@@ -45,8 +45,8 @@ const client = await (new MongoClient(uri, {})).connect();
 
 app.get('/cards/:id', 
 async function allCards(req, res) {
+  const client = await (new MongoClient(uri, {})).connect();
   try {
-    const client = await (new MongoClient(uri, {})).connect();
     const cardIdParam = req.params.id;
     const database = client.db("insertDB");
     const movies = database.collection("haiku");
@@ -56,7 +56,7 @@ async function allCards(req, res) {
 
     console.log(result);
   
-    return res.status(200).json(result);
+    return res.json(result);
   }
   catch (err) {
       console.dir
@@ -67,7 +67,8 @@ async function allCards(req, res) {
   }
 });
 
-app.post('/cards', async function store(req, res) {
+app.post('/cards', 
+async function store(req, res) {
 
   const client = await (new MongoClient(uri, {})).connect();
 
