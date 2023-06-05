@@ -5,7 +5,7 @@ import 'dotenv/config';
 const app = express();
 
 const uri = process.env.MONGODB_URI;
-const client = new MongoClient(uri);
+const client = await (new MongoClient(uri, {})).connect();
 
 
 app.get('/cards', 
