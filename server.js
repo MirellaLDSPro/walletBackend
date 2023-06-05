@@ -4,9 +4,9 @@ import 'dotenv/config';
 
 const app = express();
 
-const uri = process.env.MONGODB_URI;
-const client = await (new MongoClient(uri, {})).connect();
+app.use(express.json());
 
+const uri = process.env.MONGODB_URI;
 
 app.get('/cards', 
 async function allCards(req, res) {
@@ -31,7 +31,7 @@ const client = await (new MongoClient(uri, {})).connect();
 
     console.log(result);
   
-    return res.json(result);
+    return res.status(200).json(result);
   }
   catch (err) {
       console.dir
@@ -56,7 +56,7 @@ async function allCards(req, res) {
 
     console.log(result);
   
-    return res.json(result);
+    return res.status(200).json(result);
   }
   catch (err) {
       console.dir
@@ -67,14 +67,14 @@ async function allCards(req, res) {
   }
 });
 
-app.post('/cards', 
-async function store(req, res) {
+app.post('/cards', async function store(req, res) {
 
-    const { cardType, cvv, expirationDate, id, name, number } = req.body;
+  const client = await (new MongoClient(uri, {})).connect();
 
     try {
-      const client = await (new MongoClient(uri, {})).connect();
       
+    const { cardType, cvv, expirationDate, id, name, number } = req.body;
+
         const database = client.db("insertDB");
         const haiku = database.collection("haiku");
         if(!cardType || !cvv || !expirationDate || !id || !name || !number) {
@@ -103,8 +103,7 @@ async function store(req, res) {
     finally {
         await client.close();
     }
-} 
-);
+} );
 
 app.get("/", (req, res) => {
   res.send("Express on Vercel");
